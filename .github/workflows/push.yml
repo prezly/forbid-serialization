@@ -3,6 +3,8 @@ name: Test
 jobs:
   test:
     name: PHP Linter
+    runs-on: ubuntu-16.04
+
     steps:
       - uses: actions/checkout@master
 
