@@ -1,0 +1,16 @@
+on: push
+name: Test
+jobs:
+  phplint:
+    name: PHP Linter
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Run PHP Lint
+        run: "find src/ -name '*.php' | xargs -n1 php -l"
+
+      - name: Install Composer dependencies
+        run: "composer install --prefer-dist"
+
+      - name: Run PHPUnit
+        run: "vendor/bin/phpunit"
