@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Prezly\ForbidSerialization;
 
 use Prezly\ForbidSerialization\Exceptions\SerializationForbiddenException;
@@ -24,7 +26,7 @@ trait ForbidsSerialization
      *
      * @throws SerializationForbiddenException always.
      */
-    public function __sleep()
+    final public function __sleep()
     {
         throw new SerializationForbiddenException(get_class($this));
     }
@@ -41,7 +43,7 @@ trait ForbidsSerialization
      *
      * @throws SerializationForbiddenException always.
      */
-    public function __serialize()
+    final public function __serialize()
     {
         throw new SerializationForbiddenException(get_class($this));
     }
