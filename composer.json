@@ -1,0 +1,25 @@
+{
+    "name": "prezly/forbid-serialization",
+    "description": "Micro-package with a handy trait to forbid serialization of specific class in PHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Voskoboinyk",
+            "email": "ivan@prezly.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "\\Prezly\\ForbidSerialization\\": "./src"
+        }
+    }
+}
