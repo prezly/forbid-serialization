@@ -19,8 +19,14 @@ final class ForbidsSerializationTest extends TestCase
         serialize($this);
     }
 
-    public function __sleep()
+    /**
+     * @test
+     */
+    public function it_should_throw_when_an_instance_using_the_trait_is_being_unserialized()
     {
-        // specifically override ForbidsSerialization::__sleep()
+        $this->expectException(SerializationForbiddenException::class);
+        $this->expectExceptionMessage('Serializing `ForbidsSerializationTest` instances is forbidden.');
+
+        unserialize('O:24:"ForbidsSerializationTest":0:{}');
     }
 }
