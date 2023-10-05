@@ -59,7 +59,7 @@ trait ForbidsSerialization
      *
      * @throws SerializationForbiddenException always.
      */
-    final public function __serialize()
+    final public function __serialize(): array
     {
         throw new SerializationForbiddenException(get_class($this));
     }
@@ -75,7 +75,7 @@ trait ForbidsSerialization
      *
      * @throws SerializationForbiddenException always.
      */
-    final public function __unserialize()
+    final public function __unserialize(array $data): void
     {
         throw new SerializationForbiddenException(get_class($this));
     }
